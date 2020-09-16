@@ -210,6 +210,8 @@ Change The Shared Layout
 
 1.9 Copy the code below and modify it to suit the project
 
+```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -262,7 +264,7 @@ Change The Shared Layout
 </body>
 </html>
 
-
+```
 
 
 
@@ -272,7 +274,7 @@ Like this:
 
 
 
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -336,7 +338,7 @@ Like this:
     @RenderSection("Scripts", required: false)
 </body>
 </html>
-
+```
 
 
 
