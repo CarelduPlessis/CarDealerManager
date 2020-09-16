@@ -35,7 +35,7 @@ MVC : Model View Controller
 
 2.1 copy the code below and pass this code over the existing Startup class
 
-
+/*
 public class Startup
 {
     public Startup(IConfiguration configuration)
@@ -80,7 +80,7 @@ public class Startup
         });
     }
 }
-
+*/
 
 2.2 In Visual Studio Menu navigate to: Tools >> NuGet Packet Manager >> Packet Manager Console
 
