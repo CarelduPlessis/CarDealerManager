@@ -84,9 +84,7 @@ public class Startup
 
 2.2 In Visual Studio Menu navigate to: Tools >> NuGet Packet Manager >> Packet Manager Console
 
-2.3 copy this code: Install-Package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore 
-
-    and past the code in the Console.
+2.3 copy this code: Install-Package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore and past the code in the Console.
 
 2.4 enter and wait for it to finish. 
 
@@ -117,9 +115,7 @@ For example:
 public string UserName { get; set; }
 
 
-1.3 in "OnPostAsync" Task method look for "IdentityUser" change IdentityUser { UserName = Input.Email, Email = Input.Email };
-
-    to IdentityUser { UserName = Input.UserName, Email = Input.Email };
+1.3 in "OnPostAsync" Task method look for "IdentityUser" and change IdentityUser { UserName = Input.Email, Email = Input.Email }; to IdentityUser { UserName = Input.UserName, Email = Input.Email };
 
 
 Note: maybe you can add the extra fields here.
