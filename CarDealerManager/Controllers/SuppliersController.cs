@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CarDealerManager.Data;
 using CarDealerManager.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CarDealerManager.Controllers
 {
+    [Authorize]
     public class SuppliersController : Controller
     {
         private readonly CarDealerManagerCREDContext _context;
