@@ -347,14 +347,17 @@ Like this:
 >
 ```
 
+
+
 * In the 'Views' folder go to the Cars, Suppliers, Customers, and Stores folder. Then go in each of their pages and cut and paste their HTML in the middle of the code below.
 
+```html
 <div class="container">
     <main role="main" class="pb-3">
    
    </main>
 </div>
-
+```
 Note: As you Navigate in the CRUD pages you will find that they share the same style.
 
 
