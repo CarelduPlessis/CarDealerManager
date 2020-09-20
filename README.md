@@ -176,6 +176,8 @@ Presentation: User Interface
 
 1.4 select a Model class.
 
+* note: CRUD(Create Read Update Delete) is now CRED(Create Read Edit Delete) in my Project (I will fix this in the future) 
+
 1.5 Create the Data Context Class and name it ProjectName.Data.ProjectNameCREDContext (for this project it looks like this: CarDealerManager.Data.CarDealerManagerCREDContext)
 
 1.6 Click the "Add" button
@@ -198,13 +200,22 @@ Name: CREDdb
 * update database
 update-database
 
-* Edit the database that the foreign keys to restrict in order to prevent records from being deleted when they are referenced in another table.
-Change The Shared Layout
+
+* Add restrictions to the deletion of records in tables that have foreign keys. 
+
+1.0 Go to: 'Migrations' >> 'CarDealerManagerCRED'
+
+1.1 open CREDdb and look for onDelete: ReferentialAction.Cascade
+
+1.2 change to onDelete: ReferentialAction.Restrict
 
 
-1.9 Go to: View >> Shared >> _Layout.cshtml
 
-1.9 Copy the code below and modify it to suit the project
+* Change The Shared Layout
+
+1.0 Go to: View >> Shared >> _Layout.cshtml
+
+1.1 Copy the code below and modify it to suit the project
 
 ```html
 
@@ -295,9 +306,9 @@ Like this:
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-			<!--if user is loged in then display the following navigation buttons-->
+                        <!--if user is loged in then display the following navigation buttons-->
                         @if (User.Identity.IsAuthenticated)
-                        {
+                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Cars" asp-action="Index">Car</a>
                             </li>
@@ -310,22 +321,21 @@ Like this:
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Stores" asp-action="Index">Store</a>
                             </li>
-                        }
-
+                         }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <!--<div class="container">-->
+    <!--<main role="main" class="pb-3">-->
+    @RenderBody()
+    <!--</main>-->
+    <!--</div>-->
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - CarDealerManager - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - Super Car Dealer 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -333,31 +343,63 @@ Like this:
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
-</html>
+            </html>
+>
 ```
 
+* In the 'Views' folder go to the Cars, Suppliers, Customers, and Stores folder. Then go in each of their pages and cut and paste their HTML in the middle of the code below.
+
+<div class="container">
+    <main role="main" class="pb-3">
+   
+   </main>
+</div>-->
+
+Note: As you Navigate in the CRUD pages you will find that they share the same style.
 
 
 
+* make changes to your home page by following the code below or use a different design
+
+1.0 get a picuter for the background and create a img folder in the wwwroot folder then add the picure to the img folder
+
+1.2 change the file path of the image tage.
 
 
+```html
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!--
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+-->
+<style>
+    img {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
 
+    @@keyframes fadeInAnimation {
+        0% {
+            /* opacity: 0; */
+            clip-path: polygon(0 0, 41% 49%, 0 100%, 49% 53%, 100% 100%, 54% 50%, 100% 0, 49% 45%);
+        }
 
+        100% {
+            /* opacity: 1;*/
+            clip-path: polygon(0 0, 0 49%, 0 100%, 54% 100%, 100% 100%, 100% 50%, 100% 0, 51% 0);
+        }
+    }
+</style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div>
+    <main role="main">
+        <h1 style="text-align: center; "> Welcome To Super Car Dealer </h1>
+        <img src="~/img/Car.jpg" alt="a picture of a yellow lamborghini" />
+    </main>
+</div>
+```
