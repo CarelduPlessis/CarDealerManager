@@ -353,7 +353,7 @@ Like this:
     <main role="main" class="pb-3">
    
    </main>
-</div>-->
+</div>
 
 Note: As you Navigate in the CRUD pages you will find that they share the same style.
 
